@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steelwatch</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <div class="arena">
+
+    <h1 class="game-title">Steelwatch</h1>
+
+    <div class="fighters">
+
+      <div class="fighter player">
+        <div class="stats">
+          <h2>Knight</h2>
+          <p>HP: <span id="player-hp"></span></p>
+        </div>
+        <div class="sprite idle" id="player-sprite"></div>
+      </div>
+
+      <div class="fighter enemy">
+        <div class="stats">
+          <h2>Goblin</h2>
+          <p>HP: <span id="enemy-hp"></span></p>
+        </div>
+        <div class="sprite" id="enemy-sprite"></div>
+      </div>
+
+    </div>
+
+    <div class="controls">
+      <button id="attack-btn">Attack</button>
+    </div>
+
+  </div>
+
+  <script src="js/Character.js"></script>
+  <script src="js/Player.js"></script>
+  <script src="js/Enemy.js"></script>
+  <script src="js/Game.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
