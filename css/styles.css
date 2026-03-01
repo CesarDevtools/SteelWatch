@@ -6,24 +6,37 @@
 }
 
 body {
-    background: #1b1b1b;
-    font-family: Arial, sans-serif;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #0f0f0f;
+  /* Un patrón simple de rejilla metálica o piedra oscura */
+  background-image: 
+    radial-gradient(circle at 2px 2px, #222 1px, transparent 0);
+  background-size: 24px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+
+  box-shadow: inset 0 0 200px rgba(138, 149, 151, 0.1);
+  animation: ambiance 1s infinite alternate;
 }
+
+/*
+@keyframes ambiance {
+  from { box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.9); }
+  to { box-shadow: inset 0 0 200px rgba(66, 3, 3, 0.7); }
+}
+  */
 
 /* Arena */
 .arena {
     height: 90%;
     width: 90%;
-    max-width: 1350px;
+    max-width: 1650px;
     aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
-    background-image: url(../assets/backgrounds/patio-de-armas.png);
+    background-image: url(../assets/backgrounds/fosa-del-juicio.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     image-rendering: pixelated;
