@@ -98,12 +98,15 @@ body {
     color: rgb(255, 255, 255);
 }
 
-/* Sprite base */
-.sprite {
-    border: 2px solid #000;
-}
 
-/* Div del sprite */
+
+
+/*******************************/
+/*******************************/
+/********PLAYER SPRITE *********/
+/*******************************/
+/*******************************/
+
 #player-sprite {
     width: 96px;
     /* ancho de 1 frame */
@@ -145,13 +148,56 @@ body {
     }
 }
 
+/* Clase hurt */
+
+#player-sprite.hurt {
+    background-image: url("../assets/knight/HURT.png");
+    animation: hurtAnim 0.5s steps(4) infinite ; 
+    background-size: 384px 84px;
+}
+
+@keyframes hurtAnim {
+    from {
+        background-position: 0 0; 
+    }
+
+    to {
+        background-position: -384px;
+    }
+}
+
+/*Clase death */ 
+
+#player-sprite.death {
+    background-image: url("../assets/knight/DEATH.png");
+    animation: deathAnim 1s steps(11) forwards ; 
+    background-size: 1152px 84px;
+}
+
+@keyframes deathAnim {
+    from {
+        background-position: 0 0; 
+    }
+
+    to {
+        background-position: -1056px;
+    }
+}
+
+
+
 
 /* Controles */
 .controls {
     text-align: center;
 }
 
-/* Div del enemy sprite*/
+/*******************************/
+/*******************************/
+/********ENEMY SPRITE *********/
+/*******************************/
+/*******************************/
+
 #enemy-sprite {
     width: 96px;
     /* ancho de 1 frame */
@@ -192,5 +238,41 @@ body {
 
     to {
         background-position: -672px;
+    }
+}
+
+/* Clase hurt */
+
+#enemy-sprite.hurt {
+    background-image: url("../assets/knight/HURT.png");
+    animation: hurtAnim 0.5s steps(4) infinite ; 
+    background-size: 384px 84px;
+}
+
+@keyframes hurtAnim {
+    from {
+        background-position: 0 0; 
+    }
+
+    to {
+        background-position: -384px;
+    }
+}
+
+/*Clase death */ 
+
+#enemy-sprite.death {
+    background-image: url("../assets/knight/DEATH.png");
+    animation: deathAnim 1s steps(11) forwards ; 
+    background-size: 1152px 84px;
+}
+
+@keyframes deathAnim {
+    from {
+        background-position: 0 0; 
+    }
+
+    to {
+        background-position: -1056px;
     }
 }

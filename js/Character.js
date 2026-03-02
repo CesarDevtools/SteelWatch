@@ -19,4 +19,14 @@ class Character {
         setTimeout(() => this.sprite.classList.replace("attack", "idle"), 800);
     }
 
+    hurtAnimation() {
+        this.sprite.classList.replace("idle", "hurt");
+        setTimeout(() => this.sprite.classList.replace("hurt", "idle"), 800);
+    }
+
+    deathkAnimation() {
+        setTimeout(() => {
+            this.sprite.classList.replace("idle", "death");
+        }, 1000);
+    }
 }
