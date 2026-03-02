@@ -13,6 +13,9 @@ function updateEnemyHp (number) {
     if (number < 0) number = 0
     enemyHp.innerText = `${number}`
 }
+function showGameOver() {
+    window.location.href = "gameover.html"
+}
 
 
 /*Game*/

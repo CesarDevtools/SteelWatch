@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+    /* Fuente pixel */
+    color: #fff;
+    overflow: hidden;
+    image-rendering: pixelated;
+}
+
+/* Contenedor principal: El Estandarte*/
+.pixel-banner {
+    width: 90%;
+    max-width: 800px;
+    background-color: #1a1a1a;
+
+    /* Bordes */
+    border-left: 20px solid #a00000;
+    border-right: 20px solid #a00000;
+
+    /* Bordes */
+    border-top: 8px solid #c0c0c0;
+    border-bottom: 8px solid #c0c0c0;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+}
+
+.pixel-banner::before,
+.pixel-banner::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    box-shadow: 2px 2px 0px #888;
+}
+
+.pixel-banner::before {
+    top: 10px;
+    left: 10px;
+}
+
+.pixel-banner::after {
+    bottom: 10px;
+    right: 10px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    /* Grande, pero pixelado */
+    margin: 0;
+    color: #fff;
+    letter-spacing: 8px;
+    /* Sombra de texto pixelada */
+    text-shadow: 6px 6px 0px #555;
+    animation: pulse 1s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ff4444;
+    /* Rojo vibrante pixel */
+    margin: 15px 0 40px 0;
+    letter-spacing: 3px;
+}
+
+.message {
+    font-size: 0.9rem;
+    max-width: 650px;
+    margin: 0 0 50px 0;
+    line-height: 2;
+    color: #ccc;
+}
+
+.highlight {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    border-top: 4px solid #a00000;
+    padding-top: 15px;
+}
+
+/* Botón estilo Arcade/NES */
+.btn-pixel {
+    margin-top: 20px;
+    padding: 20px 40px;
+    background-color: #a00000;
+    color: #fff;
+    border: 6px solid #500000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.1s;
+    box-shadow: inset -4px -4px 0px #500000, inset 4px 4px 0px #ff6666;
+}
+
+.btn-pixel:hover {
+    background-color: #ff4444;
+    box-shadow: inset -4px -4px 0px #a00000, inset 4px 4px 0px #ffcccc;
+    transform: scale(1.05);
+}
+
+.btn-pixel:active {
+    transform: scale(0.95) translateY(4px);
+    box-shadow: inset 4px 4px 0px #500000, inset -4px -4px 0px #ff6666;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.9;
+        text-shadow: 6px 6px 0px #555;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 6px 6px 0px #888;
+    }
+}

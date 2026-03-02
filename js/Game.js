@@ -1,16 +1,26 @@
 class Game {
     constructor () {
         this.player = new Character ('Knight', 150, 150)
-        this.enemy = new Enemy ('Goblin', 200, 100)
+        this.enemy = new Enemy ('Goblin', 200, 200)
         this.turn = 'player'
+    }
+
+    showResult() {
+        if (this.player.health <= 0) {
+             setTimeout(() => {
+            showGameOver()
+        }, 4000)
+        } else {
+            /* some function */
+        }
     }
 
     gameOver() {
       if (this.player.isAlive() && this.enemy.isAlive()) {
-          console.log("GAME CONTINUES");
         return false
       } else {
         console.log("GAME OVER");
+        this.showResult()
         return true
       }
     }
