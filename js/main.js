@@ -6,9 +6,11 @@ const enemyHp = document.getElementById('enemy-hp')
 
 /*UI functions*/
 function updatePlayerHp (number) {
+    if (number < 0) number = 0
     playerHp.innerText = `${number}`
 }
 function updateEnemyHp (number) {
+    if (number < 0) number = 0
     enemyHp.innerText = `${number}`
 }
 

@@ -1,11 +1,11 @@
 class Game {
     constructor () {
-        this.player = new Character ('Knight', 100, 100)
+        this.player = new Character ('Knight', 150, 150)
         this.enemy = new Enemy ('Goblin', 200, 100)
         this.turn = 'player'
     }
 
-    checkGameOver() {
+    gameOver() {
       if (this.player.isAlive() && this.enemy.isAlive()) {
           console.log("GAME CONTINUES");
         return false
@@ -21,10 +21,9 @@ class Game {
 
         this.player.attack(this.enemy)
         this.turn = 'enemy'
-        this.checkGameOver()
         updateEnemyHp(this.enemy.health)
 
-        if (this.enemy.isAlive()) {
+        if (!this.gameOver()) {
             setTimeout(() => {
                 this.enemyTurn()
             }, 2000)
@@ -33,12 +32,10 @@ class Game {
 
     enemyTurn() {
         if (this.turn !== 'enemy') return
-        
         this.enemy.attack(this.player)
-        if(this.player.isAlive()) {
+        if(!this.gameOver()) {
             this.turn = 'player'
         }
-        this.checkGameOver()
         updatePlayerHp(this.player.health)
     }
 }
