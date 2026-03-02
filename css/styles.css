@@ -6,18 +6,17 @@
 }
 
 body {
-  background-color: #0f0f0f;
-  /* Un patrón simple de rejilla metálica o piedra oscura */
-  background-image: 
-    radial-gradient(circle at 2px 2px, #222 1px, transparent 0);
-  background-size: 24px 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+    background-color: #0f0f0f;
+    /* Patrón simple oscuro */
+    background-image: radial-gradient(circle at 2px 2px, #222 1px, transparent 0);
+    background-size: 24px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 
-  /*box-shadow: inset 0 0 200px rgba(138, 149, 151, 0.1);
+    /*box-shadow: inset 0 0 200px rgba(138, 149, 151, 0.1);
   animation: ambiance 1s infinite alternate;
   */
 }
@@ -67,8 +66,9 @@ body {
             /* Sombra base */
         );
 
-    /* Esto hace que el degradado se aplique solo a las letras */
-    -webkit-background-clip: text;
+    
+    /* Afecta solo al texto */
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
 
     /* Sombra para dar relieve y bordes afilados */
@@ -136,6 +136,7 @@ body {
     text-align: center;
 }
 
+/* Div del enemy sprite*/
 #enemy-sprite {
     width: 96px;
     /* ancho de 1 frame */
