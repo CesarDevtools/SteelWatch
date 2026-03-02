@@ -1,4 +1,3 @@
-const attackbutton = document.getElementById("attack-btn");
 const playerName = document.getElementById("player-name");
 const enemyName = document.getElementById("enemy-name");
 const playerHp = document.getElementById("player-hp");
@@ -15,16 +14,21 @@ function updateEnemyHp(number) {
   enemyHp.innerText = `${number}`;
 }
 
-function showGameOver() {
+function showDefeat() {
   window.location.href = "gameover.html";
 }
 
+function showVictory() {
+  window.location.href = "victory.html";
+}
 
 /*Game*/
 const gameTest = new Game();
 
-attackbutton.addEventListener("click", () => {
-  gameTest.playerTurn();
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    gameTest.playerTurn();
+  }
 });
 
 updateEnemyHp(gameTest.enemy.health);

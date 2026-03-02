@@ -44,35 +44,12 @@ body {
 
 .game-title {
     text-align: center;
-    align-self: center;
-    top: 7vh;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 80px;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: -2px;
-
-    /* Efecto de degradado metálico */
-    background: linear-gradient(to bottom,
-            #e0e0e0 0%,
-            /* Plata claro arriba */
-            #888888 45%,
-            /* Gris medio */
-            #444444 50%,
-            /* El "corte" del metal */
-            #999999 55%,
-            /* Reflejo inferior */
-            #333333 100%
-            /* Sombra base */
-        );
-
-    
-    /* Afecta solo al texto */
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para dar relieve y bordes afilados */
-    filter: drop-shadow(2px 2px 0px #111);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3.5rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 8px;
+    text-shadow: 6px 6px 0px #555;
 }
 
 /* Zona de combate */
