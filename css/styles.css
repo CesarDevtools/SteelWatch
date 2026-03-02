@@ -37,7 +37,7 @@ body {
     aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
-    background-image: url(../assets/backgrounds/fosa-del-juicio.png);
+    background-image: url(../assets/backgrounds/patio-de-armas.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     image-rendering: pixelated;
@@ -95,6 +95,7 @@ body {
 /* Stats */
 .stats {
     text-align: center;
+    color: rgb(255, 255, 255);
 }
 
 /* Sprite base */
@@ -116,7 +117,7 @@ body {
 
 /* Clase idle */
 #player-sprite.idle {
-    animation: idleAnim 0.7s steps(7) infinite;
+    animation: idleAnim 0.8s steps(7) infinite;
 }
 
 @keyframes idleAnim {
