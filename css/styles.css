@@ -7,7 +7,6 @@
 
 body {
     background-color: #0f0f0f;
-    /* Patrón simple oscuro */
     background-image: radial-gradient(circle at 2px 2px, #222 1px, transparent 0);
     background-size: 24px 24px;
     display: flex;
@@ -51,6 +50,152 @@ body {
     letter-spacing: 8px;
     text-shadow: 6px 6px 0px #555;
 }
+
+/* Controles */
+/* Contenedor Principal */
+.rpg-hud {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    gap: 4px;
+    background-color: #0c0c0c;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    user-select: none;
+}
+
+/* Paneles con borde biselado */
+.panel {
+    background: #1a1a1a;
+    border: 2px solid #3d3d3d;
+    box-shadow: inset 0 0 10px #000;
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+}
+
+/* Estilo del Retrato */
+.portrait-container {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.portrait {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #4a4a4a;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estadísticas y Barras */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.character-name {
+    color: #fafafa;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 12px;
+    width: 25px;
+}
+
+.hp-label { color: #e74c3c; }
+
+.bar-container {
+    width: 160px;
+    height: 16px;
+    background: #0a0a0a;
+    border: 1px solid #444;
+    position: relative;
+    box-shadow: inset 0 0 5px #000;
+}
+
+.bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+}
+
+.bar-text {
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.hp-bar {
+    background: linear-gradient(to bottom, #c0392b, #8a1308);
+}
+
+/* Panel de Acciones */
+.actions-panel {
+    gap: 20px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.action-item:hover {
+    transform: translateY(-2px);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
+}
+
+.icon { font-size: 24px; }
+
+.action-name {
+    font-size: 11px;
+    font-weight: bold;
+    color: #bbb;
+    letter-spacing: 1px;
+}
+
+/* Bordes específicos para las acciones */
+.attack-border { border: 2px solid #7a2a2a; }
+.defend-border { border: 2px solid #2a4a7a; }
+.skill-border { border: 2px solid #7a6a2a; }
 
 /* Zona de combate */
 .fighters {
@@ -147,7 +292,7 @@ body {
 }
 
 
-/* Clase Blocked */ 
+/* Clase Blocked */
 
 #player-sprite.block {
     background-image: url("../assets/knight/DEFEND.png");

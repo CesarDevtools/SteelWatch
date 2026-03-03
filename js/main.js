@@ -26,11 +26,11 @@ function showVictory() {
 const gameTest = new Game();
 
 document.addEventListener("keydown", (e) => {
-  if (e.code === "KeyQ" || e.code === "KeyE") gameTest.ExcutePlayerAction(e);
+  if (e.code === 'KeyQ' || e.code === 'KeyE') gameTest.ExcutePlayerAction(e);
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.code === "Space") gameTest.player.block();
+  if (e.code === 'Space') gameTest.player.block();
 });
 
 updateEnemyHp(gameTest.enemy.health);

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Steelwatch</title>
   <link rel="stylesheet" href="./css/styles.css">
-   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <div class="arena">
-    
+
     <h1 class="game-title">Steelwatch</h1>
 
     <div class="fighters">
@@ -30,15 +32,61 @@
         </div>
         <div class="sprite idle" id="enemy-sprite"></div>
       </div>
+    </div>
 
+    <!--HUD CODE-->
+    <div class="rpg-hud">
+      <div class="panel character-panel">
+        <div class="portrait-container">
+          <div class="portrait">
+            <img src="tu-imagen-aqui.png" alt="Knight">
+          </div>
+        </div>
+
+        <div class="stats-container">
+          <div class="character-name">Knight</div>
+
+          <div class="stat-row">
+            <span class="label hp-label">HP</span>
+            <div class="bar-container">
+              <div class="bar hp-bar" style="width: 100%;">
+                <span class="bar-text"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel actions-panel">
+        <div class="action-item">
+          <div class="icon-box attack-border">
+            <span class="icon">⚔️</span>
+          </div>
+          <span class="action-name">ATTACK</span>
+        </div>
+        <div class="action-item">
+          <div class="icon-box defend-border">
+            <span class="icon">🛡️</span>
+          </div>
+          <span class="action-name">DEFEND</span>
+        </div>
+        <div class="action-item">
+          <div class="icon-box skill-border">
+            <span class="icon">🔥</span>
+          </div>
+          <span class="action-name">SKILL</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  
+
+  <!--SCRIPTS-->
   <script src="js/Character.js"></script>
   <script src="js/Enemy.js"></script>
   <script src="js/Game.js"></script>
   <script src="js/main.js"></script>
 
 </body>
+
 </html>
