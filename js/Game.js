@@ -40,7 +40,6 @@ class Game {
 
     this.turn = "enemy";
     updateEnemyHp(this.enemy.health);
-    this.enemy.hurtAnimation();
 
     if (!this.gameOver()) {
       setTimeout(() => {

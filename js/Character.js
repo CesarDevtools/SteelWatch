@@ -8,26 +8,39 @@ class Player {
   }
 
   attack(target) {
-    target.health = target.health - this.attackPower;
+    target.block();
+
+    if (target.blockChance === 10) {
+      target.health = target.health;
+      target.blockAnimation();
+    } else {
+      target.health = target.health - this.attackPower;
+      target.hurtAnimation();
+    }
   }
 
   slashAttack(target) {
     const multiplier = Math.floor(Math.random() * 10) + 1;
+    target.block();
 
-    if (multiplier < 5) {
+    if (target.blockChance === 10) {
+      target.health = target.health;
+      target.blockAnimation();
+    } else if (multiplier < 5) {
       target.health = target.health - this.attackPower * 0.5;
+      target.hurtAnimation();
     } else if (multiplier > 5 && multiplier < 10) {
       target.health = target.health - this.attackPower * 1.2;
+      target.hurtAnimation();
     } else if (multiplier === 10) {
       target.health = target.health - this.attackPower * 3;
+      target.hurtAnimation();
     }
   }
 
   block() {
     this.isBlocking = true;
-    console.log("blocking");
     setTimeout(() => {
-      console.log("stopped blocking");
       this.isBlocking = false;
     }, 200);
   }

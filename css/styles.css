@@ -152,7 +152,7 @@ body {
 #player-sprite.block {
     background-image: url("../assets/knight/DEFEND.png");
     animation:
-        blockAnim 0.8s steps(6) infinite;
+        blockAnim 0.6s steps(6) infinite;
 }
 
 @keyframes blockAnim {
@@ -250,6 +250,24 @@ body {
 }
 
 @keyframes attackAnim {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -672px;
+    }
+}
+
+/* Clase block */
+
+#enemy-sprite.block {
+    background-image: url("../assets/knight/DEFEND.png");
+    animation:
+        blockAnim 0.6s steps(6) infinite;
+}
+
+@keyframes blockAnim {
     from {
         background-position: 0 0;
     }

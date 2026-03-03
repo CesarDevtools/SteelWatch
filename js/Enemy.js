@@ -4,18 +4,21 @@ class Enemy {
     this.name = name;
     this.health = health;
     this.attackPower = attackPower;
+    this.blockChance = 0;
   }
 
   attack(target) {
     if (target.isBlocking) {
       target.health = target.health;
-      target.blockAnimation()
-      console.log("ATTACK BLOCKED");
+      target.blockAnimation();
     } else {
       target.hurtAnimation();
       target.health = target.health - this.attackPower;
-      console.log("ATTACK LANDED");
     }
+  }
+
+  block() {
+    this.blockChance = Math.floor(Math.random() * 10) + 1;
   }
 
   isAlive() {
@@ -25,6 +28,11 @@ class Enemy {
   attackAnimation() {
     this.sprite.classList.replace("idle", "attack");
     setTimeout(() => this.sprite.classList.replace("attack", "idle"), 800);
+  }
+
+  blockAnimation() {
+    this.sprite.classList.replace("idle", "block");
+    setTimeout(() => this.sprite.classList.replace("block", "idle"), 800);
   }
 
   hurtAnimation() {
