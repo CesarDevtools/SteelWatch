@@ -62,7 +62,7 @@ class Game {
       } else {
         this.player.deathkAnimation();
       }
-      updatePlayerHp(this.player.health);
+      updatePlayerHp(this.player.health, this.player.maxHealth);
     }, 350);
   }
 }

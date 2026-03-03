@@ -50,9 +50,9 @@ body {
     letter-spacing: 8px;
     text-shadow: 6px 6px 0px #555;
 }
-
-/* Controles */
-/* Contenedor Principal */
+/***************************/
+/******** PLAYER HUD *******/
+/***************************/
 .rpg-hud {
     position: absolute;
     bottom: 0;

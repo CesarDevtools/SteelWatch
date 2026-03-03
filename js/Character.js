@@ -2,6 +2,7 @@ class Player {
   constructor(name, health, attackPower) {
     this.sprite = document.getElementById("player-sprite");
     this.name = name;
+    this.maxHealth = health
     this.health = health;
     this.attackPower = attackPower;
     this.isBlocking = false;

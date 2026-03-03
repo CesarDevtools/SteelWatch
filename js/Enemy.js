@@ -2,6 +2,7 @@ class Enemy {
   constructor(name, health, attackPower) {
     this.sprite = document.getElementById("enemy-sprite");
     this.name = name;
+    this.maxHealth = health
     this.health = health;
     this.attackPower = attackPower;
     this.blockChance = 0;

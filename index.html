@@ -18,10 +18,6 @@
     <div class="fighters">
 
       <div class="fighter player">
-        <div class="stats">
-          <h2 id="player-name">Knight</h2>
-          <p>HP: <span id="player-hp"></span></p>
-        </div>
         <div class="sprite idle" id="player-sprite"></div>
       </div>
 
@@ -39,18 +35,18 @@
       <div class="panel character-panel">
         <div class="portrait-container">
           <div class="portrait">
-            <img src="tu-imagen-aqui.png" alt="Knight">
+            <img src="./assets/Knight-image.png" alt="Knight">
           </div>
         </div>
 
         <div class="stats-container">
-          <div class="character-name">Knight</div>
+          <div id="player-name" class="character-name">Knight</div>
 
           <div class="stat-row">
             <span class="label hp-label">HP</span>
             <div class="bar-container">
-              <div class="bar hp-bar" style="width: 100%;">
-                <span class="bar-text"></span>
+              <div id="player-HpBar" class="bar hp-bar" style="width: 100%;">
+                <span id="bar-text" class="bar-text"></span>
               </div>
             </div>
           </div>
@@ -62,19 +58,19 @@
           <div class="icon-box attack-border">
             <span class="icon">⚔️</span>
           </div>
-          <span class="action-name">ATTACK</span>
+          <span class="action-name">Q</span>
         </div>
         <div class="action-item">
           <div class="icon-box defend-border">
             <span class="icon">🛡️</span>
           </div>
-          <span class="action-name">DEFEND</span>
+          <span class="action-name">SPACE</span>
         </div>
         <div class="action-item">
           <div class="icon-box skill-border">
             <span class="icon">🔥</span>
           </div>
-          <span class="action-name">SKILL</span>
+          <span class="action-name">E</span>
         </div>
       </div>
     </div>
