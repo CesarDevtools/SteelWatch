@@ -64,6 +64,6 @@ class Game {
         this.player.deathkAnimation();
       }
       updatePlayerHp(this.player.health);
-    }, 450);
+    }, 350);
   }
 }
