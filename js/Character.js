@@ -50,6 +50,11 @@ class Player {
     setTimeout(() => this.sprite.classList.replace("slashAttack", "idle"), 800);
   }
 
+  blockAnimation() {
+    this.sprite.classList.replace("idle", "block");
+    setTimeout(() => this.sprite.classList.replace("block", "idle"), 800);
+  }
+
   hurtAnimation() {
     this.sprite.classList.replace("idle", "hurt");
     setTimeout(() => this.sprite.classList.replace("hurt", "idle"), 800);

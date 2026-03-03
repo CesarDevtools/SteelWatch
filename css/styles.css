@@ -146,7 +146,23 @@ body {
 }
 
 
+/* Clase Blocked */ 
 
+#player-sprite.block {
+    background-image: url("../assets/knight/DEFEND.png");
+    animation:
+        blockAnim 0.8s steps(6) infinite;
+}
+
+@keyframes blockAnim {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -672px;
+    }
+}
 
 
 /* Clase hurt */

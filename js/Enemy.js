@@ -9,6 +9,7 @@ class Enemy {
   attack(target) {
     if (target.isBlocking) {
       target.health = target.health;
+      target.blockAnimation()
       console.log("ATTACK BLOCKED");
     } else {
       target.hurtAnimation();
