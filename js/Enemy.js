@@ -25,8 +25,6 @@ class Enemy {
     }
 
     deathkAnimation() {
-        setTimeout(() => {
-            this.sprite.classList.replace("idle", "death");
-        }, 1000);
+        setTimeout(() => this.sprite.classList.replace("idle", "death"), 1000);
     }
 }

@@ -14,7 +14,7 @@ class Character {
         const multiplier = Math.floor(Math.random() * 10) + 1
         
         if (multiplier < 5) {
-            target.health = target.health - this.attackPower * 0.3
+            target.health = target.health - this.attackPower * 0.5
         } else if (multiplier > 5 && multiplier < 10) {
             target.health = target.health - this.attackPower * 1.2
         } else if (multiplier === 10) {
@@ -31,14 +31,17 @@ class Character {
         setTimeout(() => this.sprite.classList.replace("attack", "idle"), 800);
     }
 
+    slashAttackAnim() {
+        this.sprite.classList.replace("idle", "slashAttack");
+        setTimeout(() => this.sprite.classList.replace("slashAttack", "idle"), 800);
+    }
+
     hurtAnimation() {
         this.sprite.classList.replace("idle", "hurt");
         setTimeout(() => this.sprite.classList.replace("hurt", "idle"), 800);
     }
 
     deathkAnimation() {
-        setTimeout(() => {
-            this.sprite.classList.replace("idle", "death");
-        }, 1000);
+        setTimeout(() => this.sprite.classList.replace("idle", "death"), 1000);
     }
 }

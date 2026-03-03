@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player = new Character("Knight", 1000, 100);
-    this.enemy = new Enemy("Traitor", 1000, 100);
+    this.player = new Character("Knight", 1000, 10);
+    this.enemy = new Enemy("Traitor", 1000, 10);
     this.turn = "player";
   }
 
@@ -27,13 +27,19 @@ class Game {
     }
   }
 
-  ExcutePlayerAction() {
+  ExcutePlayerAction(e) {
     if (this.turn !== "player") return;
 
-    this.player.attack(this.enemy);
+    if (e.code === 'KeyQ') {
+      this.player.attack(this.enemy);
+      this.player.attackAnimation();
+    } else if (e.code === 'KeyE') {
+      this.player.slashAttack(this.enemy)
+      this.player.slashAttackAnim()
+    }
+    
     this.turn = "enemy";
     updateEnemyHp(this.enemy.health);
-    this.player.attackAnimation();
     this.enemy.hurtAnimation();
 
     if (!this.gameOver()) {

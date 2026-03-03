@@ -109,6 +109,7 @@ body {
         background-position: -672px;
     }
 }
+
 /* Clase attack */
 #player-sprite.attack {
     background-image: url("../assets/knight/ATTACK\ 3.png");
@@ -125,17 +126,40 @@ body {
     }
 }
 
+
+/* Clase Slash attack */
+
+#player-sprite.slashAttack {
+    background-image: url("../assets/knight/ATTACK\ 1.png");
+    animation:
+        slashAttackAnim 0.8s steps(6) infinite;
+}
+
+@keyframes slashAttackAnim {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -672px;
+    }
+}
+
+
+
+
+
 /* Clase hurt */
 
 #player-sprite.hurt {
     background-image: url("../assets/knight/HURT.png");
-    animation: hurtAnim 0.5s steps(4) infinite ; 
+    animation: hurtAnim 0.5s steps(4) infinite;
     background-size: 384px 84px;
 }
 
 @keyframes hurtAnim {
     from {
-        background-position: 0 0; 
+        background-position: 0 0;
     }
 
     to {
@@ -143,17 +167,17 @@ body {
     }
 }
 
-/*Clase death */ 
+/*Clase death */
 
 #player-sprite.death {
     background-image: url("../assets/knight/DEATH.png");
-    animation: deathAnim 1s steps(11) forwards ; 
+    animation: deathAnim 1s steps(11) forwards;
     background-size: 1152px 84px;
 }
 
 @keyframes deathAnim {
     from {
-        background-position: 0 0; 
+        background-position: 0 0;
     }
 
     to {
@@ -202,7 +226,7 @@ body {
     }
 }
 
-/* Clase attack */ 
+/* Clase attack */
 #enemy-sprite.attack {
     background-image: url("../assets/knight/ATTACK\ 3.png");
     animation: attackAnim 0.8s steps(6);
@@ -222,13 +246,13 @@ body {
 
 #enemy-sprite.hurt {
     background-image: url("../assets/knight/HURT.png");
-    animation: hurtAnim 0.5s steps(4) infinite ; 
+    animation: hurtAnim 0.5s steps(4) infinite;
     background-size: 384px 84px;
 }
 
 @keyframes hurtAnim {
     from {
-        background-position: 0 0; 
+        background-position: 0 0;
     }
 
     to {
@@ -236,17 +260,17 @@ body {
     }
 }
 
-/*Clase death */ 
+/*Clase death */
 
 #enemy-sprite.death {
     background-image: url("../assets/knight/DEATH.png");
-    animation: deathAnim 1s steps(11) forwards ; 
+    animation: deathAnim 1s steps(11) forwards;
     background-size: 1152px 84px;
 }
 
 @keyframes deathAnim {
     from {
-        background-position: 0 0; 
+        background-position: 0 0;
     }
 
     to {

@@ -26,7 +26,7 @@ function showVictory() {
 const gameTest = new Game();
 
 document.addEventListener("keydown", (e) => {
-  gameTest.ExcutePlayerAction();
+  gameTest.ExcutePlayerAction(e);
 });
 
 updateEnemyHp(gameTest.enemy.health);
