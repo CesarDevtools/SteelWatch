@@ -10,6 +10,18 @@ class Character {
         target.health = target.health - this.attackPower
     }
 
+    slashAttack(target) {
+        const multiplier = Math.floor(Math.random() * 10) + 1
+        
+        if (multiplier < 5) {
+            target.health = target.health - this.attackPower * 0.3
+        } else if (multiplier > 5 && multiplier < 10) {
+            target.health = target.health - this.attackPower * 1.2
+        } else if (multiplier === 10) {
+            target.health = target.health - this.attackPower * 3
+        }
+    }
+
     isAlive() {
         return this.health > 0
     }

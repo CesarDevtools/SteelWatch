@@ -26,9 +26,7 @@ function showVictory() {
 const gameTest = new Game();
 
 document.addEventListener("keydown", (e) => {
-  if (e.code === "Space") {
-    gameTest.playerTurn();
-  }
+  gameTest.ExcutePlayerAction();
 });
 
 updateEnemyHp(gameTest.enemy.health);
