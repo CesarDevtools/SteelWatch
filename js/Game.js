@@ -3,6 +3,10 @@ class Game {
     this.player = new Player("Knight", 1000, 10);
     this.enemy = new Enemy("Traitor", 1000, 10);
     this.turn = "player";
+
+    updateNames(this.enemy, this.player);
+    updateEnemyHp(this.enemy.health, this.enemy.maxHealth);
+    updatePlayerHp(this.player.health, this.player.maxHealth);
   }
 
   showResult() {
@@ -39,7 +43,7 @@ class Game {
     }
 
     this.turn = "enemy";
-    updateEnemyHp(this.enemy.health);
+    updateEnemyHp(this.enemy.health, this.enemy.maxHealth);
 
     if (!this.gameOver()) {
       setTimeout(() => {

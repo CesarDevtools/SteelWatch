@@ -22,16 +22,12 @@
       </div>
 
       <div class="fighter enemy">
-        <div class="stats">
-          <h2 id="enemy-name">Traitor</h2>
-          <p>HP: <span id="enemy-hp"></span></p>
-        </div>
         <div class="sprite idle" id="enemy-sprite"></div>
       </div>
     </div>
 
     <!--HUD CODE-->
-    <div class="rpg-hud">
+    <div class="player-hud">
       <div class="panel character-panel">
         <div class="portrait-container">
           <div class="portrait">
@@ -74,6 +70,30 @@
         </div>
       </div>
     </div>
+
+     <div class="enemy-hud">
+      <div class="panel character-panel">
+        <div class="portrait-container">
+          <div class="portrait">
+            <img src="./assets/Knight-image.png" alt="Knight">
+          </div>
+        </div>
+
+        <div class="stats-container">
+          <div id="enemy-name" class="character-name">Knight</div>
+
+          <div class="stat-row">
+            <span class="label hp-label">HP</span>
+            <div class="bar-container">
+              <div id="enemy-HpBar" class="bar hp-bar" style="width: 100%;">
+                <span id="enemyBar-text" class="bar-text"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
