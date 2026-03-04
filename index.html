@@ -2,108 +2,76 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steelwatch</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steelwatch - Conscription</title>
+    <link rel="stylesheet" href="./css/intro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cinzel:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="arena">
+    <main class="manuscript-container">
+        <section class="manuscript">
+            <header class="lore-header">
+                <h1 class="game-title">Steelwatch</h1>
+                <p class="subtitle">Imperial Conscription Order</p>
+            </header>
 
-    <h1 class="game-title">Steelwatch</h1>
+            <article class="lore-content">
+                <p>The shadows of war loom over the realm. The <strong>Steelwatch</strong> seeks iron-willed souls ready
+                    to march toward glory or perdition. The oath is eternal; the metal is our law.</p>
 
-    <div class="fighters">
+                <h2>Recruitment Conditions</h2>
+                <ul>
+                    <li>Absolute loyalty to the Guard.</li>
+                    <li>The strength to bear cold steel under enemy fire.</li>
+                    <li>Acceptance that only one shall return alive from the Arena.</li>
+                </ul>
+            </article>
 
-      <div class="fighter player">
-        <div id="player-popup" class="battle-popup"><P>HOLA</P></div>
-        <div class="sprite idle" id="player-sprite"></div>
-      </div>
+            <form class="class-selection">
+                <h3>Choose Your Destiny</h3>
 
-      <div class="fighter enemy">
-        <div id="enemy-popup" class="battle-popup"></div>
-        <div class="sprite idle" id="enemy-sprite"></div>
-      </div>
-    </div>
+                <div class="options-container">
+                    <label class="class-card">
+                        <input type="radio" name="class-choice" value="tank">
+                        <div class="card-content">
+                            <span class="icon">🛡️</span>
+                            <h4>Tank</h4>
+                            <p>Pros: High HP.</p>
+                            <p>Cons: Reduced damage.</p>
+                        </div>
+                    </label>
 
-    <!--HUD CODE-->
-    <div class="player-hud">
-      <div class="panel character-panel">
-        <div class="portrait-container">
-          <div class="portrait">
-            <img src="./assets/Knight-image.png" alt="Knight">
-          </div>
-        </div>
+                    <label class="class-card">
+                        <input type="radio" name="class-choice" value="balanced" checked>
+                        <div class="card-content">
+                            <span class="icon">⚔️</span>
+                            <h4>Balanced</h4>
+                            <p>Pros: Versatile in all situations.</p>
+                            <p>Cons: Master of none.</p>
+                        </div>
+                    </label>
 
-        <div class="stats-container">
-          <div id="player-name" class="character-name">Knight</div>
+                    <label class="class-card">
+                        <input type="radio" name="class-choice" value="assassin">
+                        <div class="card-content">
+                            <span class="icon">🩸</span>
+                            <h4>Assassin</h4>
+                            <p>Pros: High critical damage.</p>
+                            <p>Cons: Low HP.</p>
+                        </div>
+                    </label>
+                </div>
 
-          <div class="stat-row">
-            <span class="label hp-label">HP</span>
-            <div class="bar-container">
-              <div id="player-HpBar" class="bar hp-bar" style="width: 100%;">
-                <span id="bar-text" class="bar-text"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                <button type="submit" class="sign-button">SIGN THE OATH</button>
+            </form>
+        </section>
+    </main>
 
-      <div class="panel actions-panel">
-        <div class="action-item">
-          <div class="icon-box attack-border">
-            <span class="icon">⚔️</span>
-          </div>
-          <span class="action-name">Q</span>
-        </div>
-        <div class="action-item">
-          <div class="icon-box defend-border">
-            <span class="icon">🛡️</span>
-          </div>
-          <span class="action-name">SPACE</span>
-        </div>
-        <div class="action-item">
-          <div class="icon-box skill-border">
-            <span class="icon">🔥</span>
-          </div>
-          <span class="action-name">E</span>
-        </div>
-      </div>
-    </div>
-
-     <div class="enemy-hud">
-      <div class="panel character-panel">
-        <div class="portrait-container">
-          <div class="portrait">
-            <img src="./assets/Knight-image.png" alt="Knight">
-          </div>
-        </div>
-
-        <div class="stats-container">
-          <div id="enemy-name" class="character-name">Knight</div>
-
-          <div class="stat-row">
-            <span class="label hp-label">HP</span>
-            <div class="bar-container">
-              <div id="enemy-HpBar" class="bar hp-bar" style="width: 100%;">
-                <span id="enemyBar-text" class="bar-text"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <!--SCRIPTS-->
-  <script src="js/Character.js"></script>
-  <script src="js/Enemy.js"></script>
-  <script src="js/Game.js"></script>
-  <script src="js/main.js"></script>
+    <script src="./js/intro.js"></script>
 
 </body>
 

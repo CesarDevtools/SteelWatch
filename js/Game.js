@@ -1,7 +1,7 @@
 class Game {
-  constructor() {
-    this.player = new Player("Knight", 1000, 10);
-    this.enemy = new Enemy("Traitor", 1000, 10);
+  constructor(playerModel, enemyModel) {
+    this.player = playerModel;
+    this.enemy = enemyModel;
     this.turn = "player";
 
     updateNames(this.enemy, this.player);
