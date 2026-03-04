@@ -4,7 +4,7 @@ const playerHp = document.getElementById("bar-text");
 const playerHpBar = document.getElementById("player-HpBar");
 const enemyHp = document.getElementById("enemyBar-text");
 const enemyHpBar = document.getElementById("enemy-HpBar");
-const popUps = document.getElementsByClassName("battle-popup");
+const popUps = document.getElementById("player-popup");
 
 /*UI functions*/
 
@@ -50,6 +50,8 @@ function showPopup(type, value) {
     "pop-weak",
   );
 
+  void popUps.offsetWidth;
+
   let message = "";
   let styleClass = "";
 
@@ -60,7 +62,7 @@ function showPopup(type, value) {
       break;
     case "weak":
       message = `WEAK! ${value}`;
-      styleClass = "pop-critical";
+      styleClass = "pop-weak";
       break;
     case "blocked":
       message = "BLOCKED!";

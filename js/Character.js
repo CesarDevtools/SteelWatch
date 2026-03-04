@@ -2,7 +2,7 @@ class Player {
   constructor(name, health, attackPower) {
     this.sprite = document.getElementById("player-sprite");
     this.name = name;
-    this.maxHealth = health
+    this.maxHealth = health;
     this.health = health;
     this.attackPower = attackPower;
     this.isBlocking = false;
@@ -14,11 +14,11 @@ class Player {
     if (target.blockChance === 10) {
       target.health = target.health;
       target.blockAnimation();
-      showPopup('blocked', 0)
+      showPopup("blocked", 0);
     } else {
       target.health = target.health - this.attackPower;
       target.hurtAnimation();
-      showPopup('hit', this.attackPower)
+      showPopup("hit", this.attackPower);
     }
   }
 
@@ -26,19 +26,27 @@ class Player {
     const multiplier = Math.floor(Math.random() * 10) + 1;
     target.block();
 
+    let damage = 0;
+
     if (target.blockChance === 10) {
       target.health = target.health;
       target.blockAnimation();
-      showPopup('blocked', 0)
+      showPopup("blocked", 0);
     } else if (multiplier < 5) {
-      target.health = target.health - this.attackPower * 0.5;
+      damage = this.attackPower * 0.5;
+      target.health -= damage;
       target.hurtAnimation();
+      showPopup("weak", damage);
     } else if (multiplier > 5 && multiplier < 10) {
-      target.health = target.health - this.attackPower * 1.2;
+      damage = this.attackPower * 1.2;
+      target.health -= damage;
       target.hurtAnimation();
+      showPopup("hit", damage);
     } else if (multiplier === 10) {
-      target.health = target.health - this.attackPower * 3;
+      damage = this.attackPower * 3;
+      target.health -= damage;
       target.hurtAnimation();
+      showPopup("critical", damage);
     }
   }
 

@@ -2,7 +2,7 @@ class Enemy {
   constructor(name, health, attackPower) {
     this.sprite = document.getElementById("enemy-sprite");
     this.name = name;
-    this.maxHealth = health
+    this.maxHealth = health;
     this.health = health;
     this.attackPower = attackPower;
     this.blockChance = 0;
@@ -12,9 +12,11 @@ class Enemy {
     if (target.isBlocking) {
       target.health = target.health;
       target.blockAnimation();
+      showPopup("blocked", 0);
     } else {
-      target.hurtAnimation();
       target.health = target.health - this.attackPower;
+      target.hurtAnimation();
+      showPopup("hit", this.attackPower);
     }
   }
 
