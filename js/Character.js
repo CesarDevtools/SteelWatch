@@ -24,30 +24,26 @@ class Player {
 
   slashAttack(target) {
     const multiplier = Math.floor(Math.random() * 10) + 1;
-    target.block();
-
-    let damage = 0;
+    const attackTypes = {
+      weak: { label: "weak", mod: 0.5 },
+      normal: { label: "hit", mod: 1.2 },
+      critical: { label: "critical", mod: 3 },
+    };
 
     if (target.blockChance === 10) {
-      target.health = target.health;
       target.blockAnimation();
-      showPopup("blocked", 0);
-    } else if (multiplier < 5) {
-      damage = this.attackPower * 0.5;
-      target.health -= damage;
-      target.hurtAnimation();
-      showPopup("weak", damage);
-    } else if (multiplier > 5 && multiplier < 10) {
-      damage = this.attackPower * 1.2;
-      target.health -= damage;
-      target.hurtAnimation();
-      showPopup("hit", damage);
-    } else if (multiplier === 10) {
-      damage = this.attackPower * 3;
-      target.health -= damage;
-      target.hurtAnimation();
-      showPopup("critical", damage);
+      return showPopup("blocked", 0);
     }
+
+    let attack = attackTypes.normal;
+    if (multiplier < 5) attack = attackTypes.weak;
+    if (multiplier === 10) attack = attackTypes.critical;
+
+    const damage = this.attackPower * attack.mod;
+    target.health -= damage;
+
+    target.hurtAnimation();
+    showPopup(attack.label, damage);
   }
 
   block() {
