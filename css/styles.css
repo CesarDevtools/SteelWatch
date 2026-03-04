@@ -245,6 +245,55 @@ body {
     color: rgb(255, 255, 255);
 }
 
+/***************************/
+/********* POP UPS *********/
+/***************************/
+
+.battle-popup {
+  position: absolute;
+  top: -100px; 
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 200;
+  text-shadow: 3px 3px 0px #000;
+  white-space: nowrap;
+}
+
+.show-battle-msg {
+  animation: floatAndFade 1s ease-out forwards;
+}
+
+.pop-hit { color: #e6a801; }
+.pop-weak { color: ffffff}
+.pop-critical { 
+  color: #d80808; 
+  font-size: 20px; 
+}
+.pop-blocked { color: #2265e2; }
+
+/* Animación de desplazamiento y desvanecimiento */
+@keyframes floatAndFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40px) scale(1);
+  }
+}
 
 
 

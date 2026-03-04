@@ -4,6 +4,7 @@ const playerHp = document.getElementById("bar-text");
 const playerHpBar = document.getElementById("player-HpBar");
 const enemyHp = document.getElementById("enemyBar-text");
 const enemyHpBar = document.getElementById("enemy-HpBar");
+const popUps = document.getElementsByClassName("battle-popup");
 
 /*UI functions*/
 
@@ -38,6 +39,40 @@ function showDefeat() {
 
 function showVictory() {
   window.location.href = "victory.html";
+}
+
+function showPopup(type, value) {
+  popUps.classList.remove(
+    "show-battle-msg",
+    "pop-hit",
+    "pop-critical",
+    "pop-blocked",
+    "pop-weak",
+  );
+
+  let message = "";
+  let styleClass = "";
+
+  switch (type) {
+    case "critical":
+      message = `CRITICAL! ${value}`;
+      styleClass = "pop-critical";
+      break;
+    case "weak":
+      message = `WEAK! ${value}`;
+      styleClass = "pop-critical";
+      break;
+    case "blocked":
+      message = "BLOCKED!";
+      styleClass = "pop-blocked";
+      break;
+    case 'hit': 
+      message = `HIT ${value}`;
+      styleClass = "pop-hit";
+  }
+
+  popUps.innerText = message;
+  popUps.classList.add("show-battle-msg", styleClass);
 }
 
 /* Control functions */

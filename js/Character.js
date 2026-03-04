@@ -14,9 +14,11 @@ class Player {
     if (target.blockChance === 10) {
       target.health = target.health;
       target.blockAnimation();
+      showPopup('blocked', 0)
     } else {
       target.health = target.health - this.attackPower;
       target.hurtAnimation();
+      showPopup('hit', this.attackPower)
     }
   }
 
@@ -27,6 +29,7 @@ class Player {
     if (target.blockChance === 10) {
       target.health = target.health;
       target.blockAnimation();
+      showPopup('blocked', 0)
     } else if (multiplier < 5) {
       target.health = target.health - this.attackPower * 0.5;
       target.hurtAnimation();
