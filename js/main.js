@@ -68,7 +68,7 @@ function showPopup(type, value) {
       message = "BLOCKED!";
       styleClass = "pop-blocked";
       break;
-    case 'hit': 
+    case "hit":
       message = `HIT ${value}`;
       styleClass = "pop-hit";
   }
@@ -79,12 +79,39 @@ function showPopup(type, value) {
 
 /* Control functions */
 document.addEventListener("keydown", (e) => {
-  if (e.code === "KeyQ" || e.code === "KeyE") gameTest.ExcutePlayerAction(e);
+  if (e.code === "KeyQ" || e.code === "KeyE") game.ExcutePlayerAction(e);
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.code === "Space") gameTest.player.block();
+  if (e.code === "Space") game.player.block();
 });
 
-/*Game*/
-const gameTest = new Game();
+/*GAME*/
+
+let game;
+
+function initGame() {
+  const selectedClassName = localStorage.getItem("selectedPlayerClass");
+
+  const playerStats = Roles[selectedClassName];
+  const enemyStats = Roles["balanced"]; // Enemigo siempre balanced por ahora
+
+  const player = new Player(
+    playerStats.name,
+    playerStats.health,
+    playerStats.attackPower,
+  );
+
+  const enemy = new Enemy(
+    "Rival Guard",
+    enemyStats.health,
+    enemyStats.attackPower,
+  );
+
+  game = new Game(player, enemy);
+
+  console.log(`Battle started: ${player.name} vs ${enemy.name}`);
+}
+
+// Ejecutar cuando el DOM esté listo
+document.addEventListener("DOMContentLoaded", initGame);

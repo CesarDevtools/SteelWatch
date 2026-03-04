@@ -26,6 +26,7 @@ class Game {
       return false;
     } else {
       console.log("GAME OVER");
+      localStorage.clear()
       this.showResult();
       return true;
     }
