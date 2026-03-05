@@ -22,12 +22,11 @@ body {
 .manuscript {
     background: #1a1a1a;
     border: 10px solid #333;
-    box-shadow:
-        0 0 0 4px #555,
-        0 0 40px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 0 4px #555, 0 0 40px rgba(0, 0, 0, 0.9);
     padding: 40px;
     position: relative;
     border-radius: 2px;
+    z-index: 1; 
 }
 
 .manuscript::before {
@@ -37,10 +36,29 @@ body {
     left: -5px;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    background-image: radial-gradient(circle, #777 3px, #222 5px, transparent 6px);
-    background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    
+    background-image: 
+        radial-gradient(circle, #777 3px, #222 5px, transparent 6px),
+        radial-gradient(circle, #777 3px, #222 5px, transparent 6px),
+        radial-gradient(circle, #777 3px, #222 5px, transparent 6px),
+        radial-gradient(circle, #777 3px, #222 5px, transparent 6px);
+    
+  
+    background-position:
+        0 0,        
+        100% 0,       
+        0 100%,      
+        100% 100%;   
+        
     background-repeat: no-repeat;
+    background-size: 12px 12px;
     pointer-events: none;
+    z-index: 2;
+}
+
+.lore-header, .lore-content, .class-selection, .modal-body {
+    position: relative;
+    z-index: 3;
 }
 
 
