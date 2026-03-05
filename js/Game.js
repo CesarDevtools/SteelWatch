@@ -4,7 +4,7 @@ class Game {
     this.enemy = enemyModel;
     this.turn = "player";
     
-    this.turnDuration = 15;
+    this.turnDuration = 10;
     this.timeLeft = this.turnDuration;
     this.timerId = null;
 
@@ -84,7 +84,7 @@ class Game {
 
     if (!this.gameOver()) {
       this.startTurnTimer(); // Reiniciar UI para el turno enemigo
-      const randomDelay = Math.floor(Math.random() * (14 - 3 + 1) + 3) * 1000;
+      const randomDelay = Math.floor(Math.random() * (9 - 1 + 1) + 1) * 1000;
       setTimeout(() => {
         this.executeEneumyAction();
       }, randomDelay);
