@@ -19,6 +19,10 @@
                 <p class="subtitle">Imperial Conscription Order</p>
             </header>
 
+            <div style="text-align: center; margin-top: 10px;">
+                <button id="openModal" class="help-button">HOW TO PLAY</button>
+            </div>
+
             <article class="lore-content">
                 <p>The shadows of war loom over the realm. The <strong>Steelwatch</strong> seeks iron-willed souls ready
                     to march toward glory or perdition. The oath is eternal; the metal is our law.</p>
@@ -71,8 +75,42 @@
         </section>
     </main>
 
-    <script src="./js/intro.js"></script>
+    <div id="howToPlayModal" class="modal">
+        <div class="modal-content manuscript">
+            <span class="close-modal">&times;</span>
 
+            <header class="lore-header">
+                <h2 class="modal-title">Field Manual</h2>
+            </header>
+
+            <article class="modal-body">
+                <section>
+                    <h3>🎮 Controls</h3>
+                    <p>Use the <strong>Selection Cards</strong> to define your role. Click <strong>"SIGN THE
+                            OATH"</strong> to begin your deployment.</p>
+                </section>
+
+                <section>
+                    <h3>⚔️ Combat Behavior</h3>
+                    <p>The enemy is relentless. Each class has a unique stance:</p>
+                    <ul>
+                        <li><strong>Tank:</strong> Absorbs heavy blows but strikes slower.</li>
+                        <li><strong>Balanced:</strong> Adaptable tactics for any threat.</li>
+                        <li><strong>Assassin:</strong> High lethality, but a single mistake is fatal.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>💀 Enemy Intel</h3>
+                    <p>Opponents follow an <strong>Aggressive Pattern</strong>. They prioritize damage unless staggered.
+                    </p>
+                </section>
+            </article>
+        </div>
+    </div>
+
+    <script src="./js/intro.js"></script>
+</body>
 </body>
 
 </html>
