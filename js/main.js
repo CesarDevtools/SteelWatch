@@ -158,6 +158,12 @@ setInterval (() => {
   
   sound.play()
 }, 25000)
+setInterval (() => {
+  const sound = document.getElementById('bgCrowd-sound');
+  console.log('CROWD');
+  
+  sound.play()
+}, 17000)
 
 document.getElementById('bg-audio').volume = 0.5; 
 document.addEventListener("DOMContentLoaded", initGame);
