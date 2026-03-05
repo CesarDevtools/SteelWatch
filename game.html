@@ -15,123 +15,137 @@
 
     <h1 class="game-title">Steelwatch</h1>
 
-    <div class="fighters">
+    <div class="arena">
+      <h1 class="game-title">Steelwatch</h1>
 
-      <div class="fighter player">
-        <div id="player-popup" class="battle-popup">
+      <div class="battle-announcer">
+        <div class="turn-box">
+          <span id="current-turn">PLAYER TURN</span>
         </div>
-        <div class="sprite idle" id="player-sprite"></div>
+        <div class="timer-container">
+          <div id="timer-bar" class="timer-progress"></div>
+          <span id="timer-text">15s</span>
+        </div>
       </div>
 
-      <div class="fighter enemy">
-        <div class="sprite idle" id="enemy-sprite"></div>
-      </div>
-    </div>
+      <div class="fighters">
 
-    <!--HUD CODE-->
-    <div class="player-hud">
-      <div class="panel character-panel">
-        <div class="portrait-container">
-          <div class="portrait">
-            <img src="./assets/Knight-image.png" alt="Knight">
+        <div class="fighter player">
+          <div id="player-popup" class="battle-popup">
+          </div>
+          <div class="sprite idle" id="player-sprite"></div>
+        </div>
+
+        <div class="fighter enemy">
+          <div class="sprite idle" id="enemy-sprite"></div>
+        </div>
+      </div>
+
+      <!--HUD CODE-->
+      <div class="player-hud">
+        <div class="panel character-panel">
+          <div class="portrait-container">
+            <div class="portrait">
+              <img src="./assets/Knight-image.png" alt="Knight">
+            </div>
+          </div>
+
+          <div class="stats-container">
+            <div id="player-name" class="character-name">Knight</div>
+
+            <div class="stat-row">
+              <span class="label hp-label">HP</span>
+              <div class="bar-container">
+                <div id="player-HpBar" class="bar hp-bar" style="width: 100%;">
+                  <span id="bar-text" class="bar-text"></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="stats-container">
-          <div id="player-name" class="character-name">Knight</div>
+        <div class="panel actions-panel">
+          <div class="action-item">
+            <div class="icon-box attack-border">
+              <span class="icon">⚔️</span>
+            </div>
+            <span class="action-name">Q</span>
+          </div>
+          <div class="action-item">
+            <div class="icon-box defend-border">
+              <span class="icon">🛡️</span>
+            </div>
+            <span class="action-name">SPACE</span>
+          </div>
+          <div class="action-item">
+            <div class="icon-box skill-border">
+              <span class="icon">🩸</span>
+            </div>
+            <span class="action-name">E</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="stat-row">
-            <span class="label hp-label">HP</span>
-            <div class="bar-container">
-              <div id="player-HpBar" class="bar hp-bar" style="width: 100%;">
-                <span id="bar-text" class="bar-text"></span>
+      <div class="enemy-hud">
+        <div class="panel character-panel">
+          <div class="portrait-container">
+            <div class="portrait">
+              <img src="./assets/Knight-image.png" alt="Knight">
+            </div>
+          </div>
+
+          <div class="stats-container">
+            <div id="enemy-name" class="character-name">Knight</div>
+
+            <div class="stat-row">
+              <span class="label hp-label">HP</span>
+              <div class="bar-container">
+                <div id="enemy-HpBar" class="bar hp-bar" style="width: 100%;">
+                  <span id="enemyBar-text" class="bar-text"></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="panel actions-panel">
-        <div class="action-item">
-          <div class="icon-box attack-border">
-            <span class="icon">⚔️</span>
-          </div>
-          <span class="action-name">Q</span>
-        </div>
-        <div class="action-item">
-          <div class="icon-box defend-border">
-            <span class="icon">🛡️</span>
-          </div>
-          <span class="action-name">SPACE</span>
-        </div>
-        <div class="action-item">
-          <div class="icon-box skill-border">
-            <span class="icon">🩸</span>
-          </div>
-          <span class="action-name">E</span>
-        </div>
-      </div>
     </div>
 
-    <div class="enemy-hud">
-      <div class="panel character-panel">
-        <div class="portrait-container">
-          <div class="portrait">
-            <img src="./assets/Knight-image.png" alt="Knight">
-          </div>
-        </div>
+    <!--SOUNDS-->
+    <!--Background music-->
+    <audio id="bg-audio" src="./assets/sounds/background/pixelTheme.mp3" autoplay loop>
+    </audio>
+    <audio id="bgThunder-sound" src="./assets/sounds/background/Thunder_4.wav">
+    </audio>
 
-        <div class="stats-container">
-          <div id="enemy-name" class="character-name">Knight</div>
+    <!--Sound effects-->
+    <audio id="basic-sound" src="./assets/sounds/attack/basic-attack.wav">
+    </audio>
 
-          <div class="stat-row">
-            <span class="label hp-label">HP</span>
-            <div class="bar-container">
-              <div id="enemy-HpBar" class="bar hp-bar" style="width: 100%;">
-                <span id="enemyBar-text" class="bar-text"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <audio id="crit-sound" src="./assets/sounds/attack/crit-attack.wav">
+    </audio>
 
-  </div>
-<!--SOUNDS-->
+    <audio id="weak-sound" src="./assets/sounds/attack/weak-attack.wav">
+    </audio>
 
-<!--Background music-->
-  <audio id="bg-audio" src="./assets/sounds/background/pixelTheme.mp3" autoplay loop>
-</audio>
+    <audio id="block-sound" src="./assets/sounds/attack/block.wav">
+    </audio>
 
+    <audio id="hurt-sound" src="./assets/sounds/hurtAndDeath/hurt.wav">
+    </audio>
 
-<!--Sound effects-->
-  <audio id="basic-sound" src="./assets/sounds/attack/basic-attack.wav">
-</audio>
+    <audio id="hurtEnemy-sound" src="./assets/sounds/hurtAndDeath/hurtEnemy.wav">
+    </audio>
 
-  <audio id="crit-sound" src="./assets/sounds/attack/crit-attack.wav">
-</audio>
+    <audio id="death-sound" src="./assets/sounds/hurtAndDeath/death.mp3">
+    </audio>
 
-<audio id="weak-sound" src="./assets/sounds/attack/weak-attack.wav">
-</audio>
-
-<audio id="block-sound" src="./assets/sounds/attack/block.wav">
-</audio>
-
-<audio id="hurt-sound" src="./assets/sounds/hurtAndDeath/hurt.wav">
-</audio>
-
-<audio id="hurtEnemy-sound" src="./assets/sounds/hurtAndDeath/hurtEnemy.wav">
-</audio>
-
-<audio id="death-sound" src="./assets/sounds/hurtAndDeath/death.mp3">
-</audio>
-
-  <!--SCRIPTS-->
-  <script src="./js/CharRoles.js"></script>
-  <script src="./js/Character.js"></script>
-  <script src="./js/Enemy.js"></script>
-  <script src="./js/Game.js"></script>
-  <script src="./js/main.js"></script>
+    <!--SCRIPTS-->
+    <script src="./js/CharRoles.js"></script>
+    <script src="./js/Character.js"></script>
+    <script src="./js/Enemy.js"></script>
+    <script src="./js/Game.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 

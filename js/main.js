@@ -27,7 +27,7 @@ function updatePlayerHp(health, maxHealth) {
 }
 
 function updateEnemyHp(health, maxHealth) {
-  if (health < 0){
+  if (health <= 0) {
     makeSound('death-sound')
     health = 0;
   } 
@@ -114,7 +114,7 @@ function makeSound (type) {
         sound.currentTime = 0; 
         sound.play()
     }
-  }
+}
 
 /* Control functions */
 document.addEventListener("keydown", (e) => {
@@ -152,6 +152,12 @@ function initGame() {
   console.log(`Battle started: ${player.name} vs ${enemy.name}`);
 }
 
-// Ejecutar cuando el DOM esté listo
+setInterval (() => {
+  const sound = document.getElementById('bgThunder-sound');
+  console.log('THUNDER');
+  
+  sound.play()
+}, 25000)
+
 document.getElementById('bg-audio').volume = 0.5; 
 document.addEventListener("DOMContentLoaded", initGame);
