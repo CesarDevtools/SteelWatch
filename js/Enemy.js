@@ -12,10 +12,13 @@ class Enemy {
     if (target.isBlocking) {
       target.health = target.health;
       target.blockAnimation();
+      makeSound('block-sound')
       showPopup("blocked", 0);
     } else {
       target.health = target.health - this.attackPower;
       target.hurtAnimation();
+      makeSound('basic-sound')
+      makeSound('hurt-sound')
       showPopup("hit", this.attackPower);
     }
   }

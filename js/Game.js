@@ -70,4 +70,5 @@ class Game {
       updatePlayerHp(this.player.health, this.player.maxHealth);
     }, 350);
   }
+
 }

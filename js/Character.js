@@ -11,18 +11,22 @@ class Player {
   attack(target) {
     target.block();
 
-    if (target.blockChance === 10) {
+    if (target.blockChance >= 9) {
       target.health = target.health;
       target.blockAnimation();
       showPopup("blocked", 0);
+      makeSound('block-sound')
     } else {
       target.health = target.health - this.attackPower;
+      makeSound('basic-sound')
+      makeSound('hurtEnemy-sound')
       target.hurtAnimation();
       showPopup("hit", this.attackPower);
     }
   }
 
   slashAttack(target) {
+    target.block()
     const multiplier = Math.floor(Math.random() * 10) + 1;
     const attackTypes = {
       weak: { label: "weak", mod: 0.5 },
@@ -30,14 +34,29 @@ class Player {
       critical: { label: "critical", mod: 3 },
     };
 
-    if (target.blockChance === 10) {
+    if (target.blockChance > 4) {
       target.blockAnimation();
+      makeSound('block-sound')
       return showPopup("blocked", 0);
     }
 
-    let attack = attackTypes.normal;
-    if (multiplier < 5) attack = attackTypes.weak;
-    if (multiplier === 10) attack = attackTypes.critical;
+
+    let attack;
+    if (multiplier < 7) {
+      makeSound('weak-sound')
+      makeSound('hurtEnemy-sound')
+      attack = attackTypes.weak
+    } 
+    if (multiplier >= 7 && multiplier <= 8) {
+      makeSound('basic-sound')
+      makeSound('hurtEnemy-sound')
+      attack = attackTypes.normal
+    } 
+    if (multiplier >= 9) {
+      makeSound('crit-sound')
+      makeSound('hurtEnemy-sound')
+      attack = attackTypes.critical
+    } 
 
     const damage = this.attackPower * attack.mod;
     target.health -= damage;

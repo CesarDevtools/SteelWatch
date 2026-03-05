@@ -14,7 +14,10 @@ function updateNames(enemy, player) {
 }
 
 function updatePlayerHp(health, maxHealth) {
-  if (health < 0) health = 0;
+  if (health <= 0) {
+    makeSound('death-sound')
+    health = 0;
+  } 
 
   let percentage = (health / maxHealth) * 100;
   percentage = Math.max(0, Math.min(percentage, 100));
@@ -24,7 +27,10 @@ function updatePlayerHp(health, maxHealth) {
 }
 
 function updateEnemyHp(health, maxHealth) {
-  if (health < 0) health = 0;
+  if (health < 0){
+    makeSound('death-sound')
+    health = 0;
+  } 
 
   let percentage = (health / maxHealth) * 100;
   percentage = Math.max(0, Math.min(percentage, 100));
@@ -77,6 +83,39 @@ function showPopup(type, value) {
   popUps.classList.add("show-battle-msg", styleClass);
 }
 
+function makeSound (type) {
+    let sound;
+
+    switch (type) {
+        case 'basic-sound':
+            sound = document.getElementById('basic-sound');
+            break;
+        case 'crit-sound':
+            sound = document.getElementById('crit-sound');
+            break;
+        case 'weak-sound':
+            sound = document.getElementById('weak-sound'); 
+            break;
+        case 'block-sound':
+            sound = document.getElementById('block-sound');
+            break;
+        case 'hurt-sound':
+            sound = document.getElementById('hurt-sound');
+            break;
+        case 'hurtEnemy-sound':
+            sound = document.getElementById('hurtEnemy-sound');
+            break;
+        case 'death-sound':
+            sound = document.getElementById('death-sound');
+            break;
+    }
+    
+    if (sound) {
+        sound.currentTime = 0; 
+        sound.play()
+    }
+  }
+
 /* Control functions */
 document.addEventListener("keydown", (e) => {
   if (e.code === "KeyQ" || e.code === "KeyE") game.ExcutePlayerAction(e);
@@ -114,4 +153,5 @@ function initGame() {
 }
 
 // Ejecutar cuando el DOM esté listo
+document.getElementById('bg-audio').volume = 0.5; 
 document.addEventListener("DOMContentLoaded", initGame);
