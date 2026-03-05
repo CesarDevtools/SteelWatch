@@ -55,7 +55,6 @@ class Game {
 
   handleTimeout() {
     clearInterval(this.timerId);
-    console.log(`Time out for ${this.turn}`);
     
     if (this.turn === "player") {
       this.turn = "enemy";

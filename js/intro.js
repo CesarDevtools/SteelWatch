@@ -36,7 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 modal.style.display = "none";
             }
         }
-    } else {
-        console.error("No se encontraron los elementos del modal. Revisa las clases en el HTML.");
-    }
+    } 
 });

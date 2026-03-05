@@ -148,20 +148,15 @@ function initGame() {
   );
 
   game = new Game(player, enemy);
-
-  console.log(`Battle started: ${player.name} vs ${enemy.name}`);
 }
 
 setInterval (() => {
-  const sound = document.getElementById('bgThunder-sound');
-  console.log('THUNDER');
-  
+  const sound = document.getElementById('bgThunder-sound');  
   sound.play()
 }, 25000)
 setInterval (() => {
   const sound = document.getElementById('bgCrowd-sound');
-  console.log('CROWD');
-  
+  sound.volume = 0.15;
   sound.play()
 }, 17000)
 

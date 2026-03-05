@@ -25,7 +25,6 @@ class Enemy {
 
   block() {
     this.blockChance = Math.floor(Math.random() * 10) + 1;
-    console.log(this.blockChance);
   }
 
   isAlive() {

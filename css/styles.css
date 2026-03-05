@@ -399,7 +399,7 @@ body {
 
 /* Clase attack */
 #player-sprite.attack {
-    background-image: url("../assets/knight/ATTACK\ 3.png");
+    background-image: url("../assets/knight/ATTACK-3.png");
     animation: attackAnim 0.6s steps(6);
 }
 
@@ -417,7 +417,7 @@ body {
 /* Clase Slash attack */
 
 #player-sprite.slashAttack {
-    background-image: url("../assets/knight/ATTACK\ 1.png");
+    background-image: url("../assets/knight/ATTACK-1.png");
     animation:
         slashAttackAnim 0.6s steps(6) infinite;
 }
@@ -531,7 +531,7 @@ body {
 
 /* Clase attack */
 #enemy-sprite.attack {
-    background-image: url("../assets/knight/ATTACK\ 3.png");
+    background-image: url("../assets/knight/ATTACK-3.png");
     animation: attackAnim 0.7s steps(6);
 }
 
