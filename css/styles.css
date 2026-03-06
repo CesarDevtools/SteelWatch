@@ -15,17 +15,7 @@ body {
     min-height: 100vh;
     margin: 0;
 
-    /*box-shadow: inset 0 0 200px rgba(138, 149, 151, 0.1);
-  animation: ambiance 1s infinite alternate;
-  */
 }
-
-/*
-@keyframes ambiance {
-  from { box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.9); }
-  to { box-shadow: inset 0 0 200px rgba(66, 3, 3, 0.7); }
-}
-  */
 
 /* Arena */
 .arena {
@@ -57,7 +47,7 @@ body {
 
 .battle-announcer {
     position: absolute;
-    top: 100px; 
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 280px;
@@ -66,20 +56,20 @@ body {
     padding: 10px;
     text-align: center;
     z-index: 10;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .turn-box {
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
-    color: #ffcc00; 
+    color: #ffcc00;
     margin-bottom: 8px;
     text-shadow: 2px 2px 0px #000;
 }
 
 /* Clase para el turno del enemigo */
 .turn-box.enemy-turn {
-    color: #e74c3c; 
+    color: #e74c3c;
 }
 
 .timer-container {
@@ -134,7 +124,6 @@ body {
     user-select: none;
 }
 
-/* Paneles con borde biselado */
 .panel {
     background: #1a1a1a;
     border: 2px solid #3d3d3d;
@@ -144,7 +133,6 @@ body {
     align-items: center;
 }
 
-/* Estilo del Retrato */
 .portrait-container {
     text-align: center;
     margin-right: 15px;
@@ -193,7 +181,9 @@ body {
     width: 25px;
 }
 
-.hp-label { color: #e74c3c; }
+.hp-label {
+    color: #e74c3c;
+}
 
 .bar-container {
     width: 160px;
@@ -251,10 +241,12 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
-.icon { font-size: 24px; }
+.icon {
+    font-size: 24px;
+}
 
 .action-name {
     font-size: 11px;
@@ -264,9 +256,17 @@ body {
 }
 
 /* Bordes específicos para las acciones */
-.attack-border { border: 2px solid #7a6a2a; }
-.defend-border { border: 2px solid #2a4a7a; }
-.skill-border { border: 2px solid #7a2a2a; }
+.attack-border {
+    border: 2px solid #7a6a2a;
+}
+
+.defend-border {
+    border: 2px solid #2a4a7a;
+}
+
+.skill-border {
+    border: 2px solid #7a2a2a;
+}
 
 /***************************/
 /******** ENEMY HUD ********/
@@ -306,7 +306,6 @@ body {
     margin: 0 30px;
 }
 
-/* Stats */
 .stats {
     text-align: center;
     color: rgb(255, 255, 255);
@@ -317,58 +316,68 @@ body {
 /***************************/
 
 .battle-popup {
-  position: absolute;
-  top: -100px; 
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 16px;
-  text-align: center;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 200;
-  text-shadow: 3px 3px 0px #000;
-  white-space: nowrap;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 200;
+    text-shadow: 3px 3px 0px #000;
+    white-space: nowrap;
 }
 
 .show-battle-msg {
-  animation: floatAndFade 1s ease-out forwards;
+    animation: floatAndFade 1s ease-out forwards;
 }
 
-.pop-hit { color: #e6a801; }
-.pop-weak { color: #118a8a}
-.pop-critical { 
-  color: #d80808; 
-  font-size: 20px; 
+.pop-hit {
+    color: #e6a801;
 }
-.pop-blocked { color: #2265e2; }
+
+.pop-weak {
+    color: #118a8a
+}
+
+.pop-critical {
+    color: #d80808;
+    font-size: 20px;
+}
+
+.pop-blocked {
+    color: #2265e2;
+}
 
 /* Animación de desplazamiento y desvanecimiento */
 @keyframes floatAndFade {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 20px) scale(0.8);
-  }
-  20% {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1.1);
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -40px) scale(1);
-  }
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.8);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1.1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -40px) scale(1);
+    }
 }
 
 
 
 
 /*******************************/
-/*******************************/
 /********PLAYER SPRITE *********/
-/*******************************/
 /*******************************/
 
 #player-sprite {
@@ -497,9 +506,7 @@ body {
 }
 
 /*******************************/
-/*******************************/
-/********ENEMY SPRITE *********/
-/*******************************/
+/********* ENEMY SPRITE ********/
 /*******************************/
 
 #enemy-sprite {

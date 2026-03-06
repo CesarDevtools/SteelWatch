@@ -6,6 +6,7 @@ class Player {
     this.health = health;
     this.attackPower = attackPower;
     this.isBlocking = false;
+    this.canBlock = true; 
   }
 
   attack(target) {
@@ -15,18 +16,18 @@ class Player {
       target.health = target.health;
       target.blockAnimation();
       showPopup("blocked", 0);
-      makeSound('block-sound')
+      makeSound("block-sound");
     } else {
       target.health = target.health - this.attackPower;
-      makeSound('basic-sound')
-      makeSound('hurtEnemy-sound')
+      makeSound("basic-sound");
+      makeSound("hurtEnemy-sound");
       target.hurtAnimation();
       showPopup("hit", this.attackPower);
     }
   }
 
   slashAttack(target) {
-    target.block()
+    target.block();
     const multiplier = Math.floor(Math.random() * 10) + 1;
     const attackTypes = {
       weak: { label: "weak", mod: 0.5 },
@@ -36,27 +37,26 @@ class Player {
 
     if (target.blockChance > 4) {
       target.blockAnimation();
-      makeSound('block-sound')
+      makeSound("block-sound");
       return showPopup("blocked", 0);
     }
 
-
     let attack;
     if (multiplier < 7) {
-      makeSound('weak-sound')
-      makeSound('hurtEnemy-sound')
-      attack = attackTypes.weak
-    } 
+      makeSound("weak-sound");
+      makeSound("hurtEnemy-sound");
+      attack = attackTypes.weak;
+    }
     if (multiplier >= 7 && multiplier <= 8) {
-      makeSound('basic-sound')
-      makeSound('hurtEnemy-sound')
-      attack = attackTypes.normal
-    } 
+      makeSound("basic-sound");
+      makeSound("hurtEnemy-sound");
+      attack = attackTypes.normal;
+    }
     if (multiplier >= 9) {
-      makeSound('crit-sound')
-      makeSound('hurtEnemy-sound')
-      attack = attackTypes.critical
-    } 
+      makeSound("crit-sound");
+      makeSound("hurtEnemy-sound");
+      attack = attackTypes.critical;
+    }
 
     const damage = this.attackPower * attack.mod;
     target.health -= damage;
@@ -66,10 +66,18 @@ class Player {
   }
 
   block() {
+    if (!this.canBlock) return;
+
     this.isBlocking = true;
+    this.canBlock = false; 
+  
     setTimeout(() => {
       this.isBlocking = false;
     }, 200);
+
+    setTimeout(() => {
+      this.canBlock = true;
+    }, 1000);
   }
 
   isAlive() {

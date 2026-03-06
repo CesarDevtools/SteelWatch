@@ -130,21 +130,23 @@ document.addEventListener("keydown", (e) => {
 let game;
 
 function initGame() {
-  const selectedClassName = localStorage.getItem("selectedPlayerClass");
-
+  const selectedClassName = localStorage.getItem("selectedPlayerClass")
   const playerStats = Roles[selectedClassName];
-  const enemyStats = Roles["balanced"]; // Enemigo siempre balanced por ahora
+
+  const roleKeys = Object.keys(Roles); 
+  const randomKey = roleKeys[Math.floor(Math.random() * roleKeys.length)];
+  const enemyStats = Roles[randomKey];
 
   const player = new Player(
     playerStats.name,
     playerStats.health,
-    playerStats.attackPower,
+    playerStats.attackPower
   );
 
   const enemy = new Enemy(
-    "Rival Guard",
+    `Dark ${enemyStats.name}`, 
     enemyStats.health,
-    enemyStats.attackPower,
+    enemyStats.attackPower
   );
 
   game = new Game(player, enemy);

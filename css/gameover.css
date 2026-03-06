@@ -13,7 +13,7 @@ body {
     image-rendering: pixelated;
 }
 
-/* Contenedor principal: El Estandarte*/
+/* Contenedor principal */
 .pixel-banner {
     width: 90%;
     max-width: 800px;
@@ -89,7 +89,6 @@ h1 {
     padding-top: 15px;
 }
 
-/* Botón estilo Arcade/NES */
 .btn-pixel {
     margin-top: 20px;
     padding: 20px 40px;

@@ -26,7 +26,7 @@ body {
     padding: 40px;
     position: relative;
     border-radius: 2px;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .manuscript::before {
@@ -36,27 +36,30 @@ body {
     left: -5px;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    
-    background-image: 
+
+    background-image:
         radial-gradient(circle, #777 3px, #222 5px, transparent 6px),
         radial-gradient(circle, #777 3px, #222 5px, transparent 6px),
         radial-gradient(circle, #777 3px, #222 5px, transparent 6px),
         radial-gradient(circle, #777 3px, #222 5px, transparent 6px);
-    
-  
+
+
     background-position:
-        0 0,        
-        100% 0,       
-        0 100%,      
-        100% 100%;   
-        
+        0 0,
+        100% 0,
+        0 100%,
+        100% 100%;
+
     background-repeat: no-repeat;
     background-size: 12px 12px;
     pointer-events: none;
     z-index: 2;
 }
 
-.lore-header, .lore-content, .class-selection, .modal-body {
+.lore-header,
+.lore-content,
+.class-selection,
+.modal-body {
     position: relative;
     z-index: 3;
 }
@@ -219,7 +222,7 @@ body {
 }
 
 .controls-list strong {
-    color: #ffcc00; /* Color dorado para las teclas */
+    color: #ffcc00;
     background: #333;
     padding: 2px 6px;
     border-radius: 3px;

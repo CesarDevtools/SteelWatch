@@ -20,7 +20,7 @@ if (recruitmentForm) {
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("howToPlayModal");
     const btn = document.getElementById("openModal");
-    const span = document.querySelector(".close-modal"); // Cambiado a querySelector
+    const span = document.querySelector(".close-modal");
 
     if (btn && modal && span) {
         btn.onclick = function() {

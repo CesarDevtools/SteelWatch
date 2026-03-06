@@ -77,7 +77,6 @@ class Game {
       this.player.slashAttackAnim();
     }
 
-    // Detener timer actual al actuar
     clearInterval(this.timerId);
     this.turn = "enemy";
     updateEnemyHp(this.enemy.health, this.enemy.maxHealth);
