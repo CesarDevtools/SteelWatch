@@ -11,7 +11,7 @@ const Roles = {
     },
     assassin: {
         name: "Shadow Blade",
-        health: 80,
-        attackPower: 25,
+        health: 70,
+        attackPower: 24,
     }
 };
