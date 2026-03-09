@@ -31,7 +31,7 @@ class Player {
     const multiplier = Math.floor(Math.random() * 10) + 1;
     const attackTypes = {
       weak: { label: "weak", mod: 0.5 },
-      normal: { label: "hit", mod: 1.2 },
+      normal: { label: "hit", mod: 1.5 },
       critical: { label: "critical", mod: 3 },
     };
 
@@ -58,7 +58,7 @@ class Player {
       attack = attackTypes.critical;
     }
 
-    const damage = this.attackPower * attack.mod;
+    const damage = Math.floor(this.attackPower * attack.mod);
     target.health -= damage;
 
     target.hurtAnimation();
